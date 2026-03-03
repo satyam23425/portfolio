@@ -1,23 +1,18 @@
-import { Navbar } from "./Navbar";
-import { Hero } from "./sections/Hero";
-import { About } from "./sections/About";
-import { Experience } from "./sections/Experience";
-import { Projects } from "./sections/Projects";
-import { Testimonials } from "./sections/Testimonials";
-import { Contact } from "./sections/Contact";
+import { Navbar } from "./Navbar.jsx";
+import { Hero } from "./sections/Hero.jsx";
+import { About } from "./sections/About.jsx";
+import { Experience } from "./sections/Experience.jsx";
+import { Projects } from "./sections/Projects.jsx";
+import { Testimonials } from "./sections/Testimonials.jsx";
+import { Contact } from "./sections/Contact.jsx";
+
 
 function App() {
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden scroll-smooth">
-
-      {/* Navbar */}
       <Navbar />
-
-      {/* Main Content */}
       <main className="pt-20">
-
         <Hero />
-
         <div className="max-w-7xl mx-auto">
           <About />
           <Experience />
@@ -27,8 +22,6 @@ function App() {
         </div>
 
       </main>
-
-      {/* Footer */}
       <footer className="border-t border-border mt-20 py-8 text-center text-muted-foreground">
         <p>
           © {new Date().getFullYear()} Satyam Pandit.
