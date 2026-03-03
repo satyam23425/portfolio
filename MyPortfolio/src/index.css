@@ -1,0 +1,104 @@
+@import "tailwindcss";
+
+/* =========================
+   THEME VARIABLES
+========================= */
+
+@theme {
+  --color-background: #0f1418;
+  --color-foreground: #f0f2f5;
+  --color-card: #141a1f;
+  --color-primary: #20b2a6;
+  --color-primary-foreground: #ffffff;
+  --color-secondary: #1f2030;
+  --color-secondary-foreground: #20b2a6;
+  --color-muted: #252e37;
+  --color-muted-foreground: #7a8491;
+  --color-border: #242b32;
+  --color-highlight: #f5a623;
+  --color-surface: #1a2329;
+  --radius: 0.75rem;
+}
+
+/* =========================
+   BASE STYLES
+========================= */
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  h1, h2, h3, h4 {
+    @apply font-semibold tracking-tight;
+  }
+
+  a {
+    @apply transition-colors duration-200;
+  }
+
+  ::selection {
+    background: var(--color-primary);
+    color: white;
+  }
+
+  /* Better focus styles for accessibility */
+  :focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+  }
+
+  /* Scrollbar styling (Modern Minimal) */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: var(--color-background);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: var(--color-muted);
+    border-radius: 10px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--color-primary);
+  }
+
+  /* Serif utility */
+  .font-serif {
+    font-family: 'Playfair Display', serif;
+  }
+}
+
+/* =========================
+   ANIMATIONS
+========================= */
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeUp {
+  animation: fadeUp 0.8s ease forwards;
+}
